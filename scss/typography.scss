@@ -1,0 +1,22 @@
+h1,h2,h3,h4 {
+  font-weight: normal;
+}
+
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: 'Dosis-SemiBold';
+  letter-spacing: 1.5px;
+
+  &.gray {
+    color: map-get($grayscale, 3);
+  }
+}
+
+.header-text {
+	font-size: 14px;
+	font-family: 'Dosis-SemiBold';
+  letter-spacing: 1.5px;
+	color: map-get($grayscale, 3);
+	text-transform: uppercase;
+}

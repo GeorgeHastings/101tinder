@@ -1,0 +1,186 @@
+@import 'variables';
+@import 'utilities';
+@import 'layout';
+@import 'typography';
+@import 'buttons';
+@import 'form';
+@include font-face(GT-Walsheim-Pro-Light, fonts/GT-Walsheim-Pro-Light);
+@include font-face(GT-Walsheim-Pro-Medium, fonts/GT-Walsheim-Pro-Medium);
+@include font-face(GT-Walsheim-Pro-Bold, fonts/GT-Walsheim-Pro-Bold);
+@include font-face(Linearicons-free, fonts/Linearicons-free);
+@include font-face(Dosis-Bold, fonts/Dosis-Bold);
+@include font-face(Dosis-Book, fonts/Dosis-Book);
+@include font-face(Dosis-ExtraBold, fonts/Dosis-ExtraBold);
+@include font-face(Dosis-ExtraLight, fonts/Dosis-ExtraLight);
+@include font-face(Dosis-Light, fonts/Dosis-Light);
+@include font-face(Dosis-Medium, fonts/Dosis-Medium);
+@include font-face(Dosis-SemiBold, fonts/Dosis-SemiBold);
+
+* {box-sizing: border-box;}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+  margin: 0;
+	background-color: #000;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: 'Dosis-Book', sans-serif;
+	font-size: 18px;
+	color: $deepburp;
+}
+
+#screen {
+	opacity: 0;
+	animation: pop-in 0.8s cubic-bezier(0, 1.2, 0.5, 1) 3s;
+	animation-fill-mode: forwards;
+}
+
+
+.amount-input {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 455px;
+  width: 356px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #A5D6A7;
+  text-align: center;
+  cursor: -webkit-grab;
+  border-radius: 3px;
+	// opacity: 0;
+  transition: all 0.8s cubic-bezier(0, 1.2, 0.5, 1);
+  user-select:none;
+
+	.like {
+		opacity: 0;
+		transform: translate3d(-60px, 12px, 0) rotateZ(-20deg);
+	}
+	.nope {
+		opacity: 0;
+		width: 60%;
+		transform: translate3d(60px, 12px, 0) rotateZ(20deg);
+	}
+
+  &:active {
+    cursor: -webkit-grabbing;
+    transition: none;
+  }
+	&:nth-child(1) {
+		background: url('../assets/images/dk.png');
+		background-size: cover;
+	}
+	&:nth-child(2) {
+		background: url('../assets/images/trump.png');
+		background-size: cover;
+	}
+	&:nth-child(3) {
+		background: url('../assets/images/darthvader.png');
+		margin-top: 10px;
+		background-size: cover;
+	}
+	&:nth-child(4) {
+		background: url('../assets/images/TinderProfile_Tiffany_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(5) {
+		background: url('../assets/images/TinderProfile_Tiffany_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(6) {
+		background: url('../assets/images/TinderProfile_Tiffany_01_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(7) {
+		background: url('../assets/images/TinderProfile_Selma_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(8) {
+		background: url('../assets/images/TinderProfile_Selma_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(9) {
+		background: url('../assets/images/TinderProfile_Selma_01_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(10) {
+		background: url('../assets/images/TinderProfile_Michelle_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(11) {
+		background: url('../assets/images/TinderProfile_Michelle_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(12) {
+		background: url('../assets/images/TinderProfile_Michelle_01_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(13) {
+		background: url('../assets/images/TinderProfile_Lauren_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(14) {
+		background: url('../assets/images/TinderProfile_Lauren_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(15) {
+		background: url('../assets/images/TinderProfile_Lauren_01_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(16) {
+		background: url('../assets/images/TinderProfile_Jared_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(17) {
+		background: url('../assets/images/TinderProfile_Jared_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(18) {
+		background: url('../assets/images/TinderProfile_Jared_01_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(19) {
+		background: url('../assets/images/TinderProfile_Jackie_03_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(20) {
+		background: url('../assets/images/TinderProfile_Jackie_02_Crop.jpg');
+		background-size: cover;
+	}
+	&:nth-child(21) {
+		background: url('../assets/images/TinderProfile_Jackie_01_Crop.jpg');
+		background-size: cover;
+	}
+}
+
+.match {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+	// transform: scale(0.7);
+	opacity: 0;
+
+	&.pop-in {
+		animation: pop-in 0.5s cubic-bezier(.02,.97,.02,.98);
+		animation-fill-mode: forwards;
+	}
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
